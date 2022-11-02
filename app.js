@@ -73,21 +73,32 @@ class Calculator {
     constructor (result = 0){
         this.result = result;
     }
-    add = function(a, b = 0){ return this.result =  (a + b)};
-    subtract = function(a, b = 0){ return this.result = (a - b)};
-    multiply = function(a, b = 1){ return this.result = (a * b)};
-    divide = function(a, b = 1){ return this.result = (a / b)};
+    add = function(a, b = 0){  this.result =  (a + b)};
+    subtract = function(a, b = 0){  this.result = (a - b)};
+    multiply = function(a, b = 1){ this.result = (a * b)};
+    divide = function(a, b = 1){ if (b || b != 0){ this.result = (a / b)} else {return this.result = "Invalid input";}};
+    displayResult = function (){console.log(this.result)};
 }
 
 
 //Let's make a cool calculator
 let quickMafs = new Calculator();
 
-console.log(quickMafs.add(5));
-console.log(quickMafs.add(5,3));
-console.log(quickMafs.subtract(4));
-console.log(quickMafs.subtract(4,2));
-console.log(quickMafs.multiply(3));
-console.log(quickMafs.multiply(3,6));
-console.log(quickMafs.divide(7));
-console.log(quickMafs.divide(12,3));
+quickMafs.add(5);
+quickMafs.displayResult();
+quickMafs.add(5,3);
+quickMafs.displayResult();
+quickMafs.subtract(4);
+quickMafs.displayResult();
+quickMafs.subtract(4,2);
+quickMafs.displayResult();
+quickMafs.multiply(3);
+quickMafs.displayResult();
+quickMafs.multiply(3,6);
+quickMafs.displayResult();
+quickMafs.divide(7);
+quickMafs.displayResult();
+quickMafs.divide(12,3);
+quickMafs.displayResult();
+quickMafs.divide(12,0);
+quickMafs.displayResult();
